@@ -4,16 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Figure_type extends Model
+class FigureType extends Model
 {
     public function figure(){
         return $this->hasMany(Figure::class);
     }
 
     public static function add($type) {
-        $figure_type = new static;
-        $figure_type->type = $type;
-        return $figure_type;
+        $figureType = new static;
+        $figureType->type = $type;
+        return $figureType;
     }
 
     public function edit($fields) {
@@ -25,4 +25,10 @@ class Figure_type extends Model
     {
         $this->delete();
     }
+
+    public static function getTypeName($id) {
+        return FigureType::find($id)->type;
+    }
+
+    protected $table = 'figures_type';
 }

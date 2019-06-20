@@ -3,19 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use function PHPSTORM_META\type;
 
 class Figure extends Model
 {
-    protected $fillable = ['type_id', 'data'];
+    protected $fillable = ['type_id', 'data', 'square'];
 
     public function type() {
-        return $this->hasOne(Figure_type::class);
+        return $this->hasOne(FigureType::class);
     }
 
     public static function add($fields) {
         $figure = new static;
         $figure->fill($fields);
-        $figure->setSquare();
         $figure->save();
         return $figure;
     }
@@ -30,16 +30,10 @@ class Figure extends Model
         $this->delete();
     }
 
-    public function setSquare() {
-        $type = $this->type()->type;
-        $data = $this->data;
-        $this->square = calcSquare($type, $data);
-    }
-
-    public function calcSquare($type, $data) {
-        switch ($type){
+    public static function calcSquare($typeName, $data) {
+        switch ($typeName){
             case 'circle':
-                return pow($data->radius, 2) * pi();
+                return pi() * pow( $data["radius"], 2 );
             default:
                 return;
         }

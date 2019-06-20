@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFigures extends Migration
+class CreateFiguresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,6 +18,7 @@ class CreateFigures extends Migration
             $table->integer('type_id');
             $table->json('data');
             $table->float('square');
+            $table->timestamps();
         });
     }
 
