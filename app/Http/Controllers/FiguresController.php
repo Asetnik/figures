@@ -46,9 +46,10 @@ class FiguresController extends Controller
         $figure = new Figure;
         $figure->type_id = $typeId;
         $figure->data = json_encode($data);
-        $figure->square = Figure::calcSquare($typeName, $data);
+        $square = Figure::calcSquare($typeName, $data);
+        $figure->square = $square;
         $figure->save();
-        return response()->json('Successfully added');
+        return response()->json('Figure added. Square is '. $square);
     }
 
     /**

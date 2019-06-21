@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/figures', 'FiguresController@store');
+Route::get('/figures_types', 'FiguresTypesController@index');

@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import ReactDOM, { render } from 'react-dom';
+import Container from 'react-bootstrap/Container'
 
-import Test from './components/Test/Test';
+import AddFigure from './components/AddFigure/AddFigure';
+import Header from "./components/Header/Header";
 
 class App extends Component {
     render() {
         return (
-            <Test />
+            <div>
+                <Header />
+                <Container>
+                    <AddFigure />
+                </Container>
+            </div>
         );
     }
 }

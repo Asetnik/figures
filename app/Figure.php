@@ -33,7 +33,17 @@ class Figure extends Model
     public static function calcSquare($typeName, $data) {
         switch ($typeName){
             case 'circle':
-                return pi() * pow( $data["radius"], 2 );
+                return pi() * pow( $data['radius'], 2 );
+            case 'triangle':
+                $a = $data['firstSide'];
+                $b = $data['secondSide'];
+                $c = $data['thirdSide'];
+                $p = 0.5 * ($a + $b + $c);
+                return sqrt($p * ($p - $a) * ($p - $b) * ($p - $c));
+            case 'square':
+                return pow( $data['height'], 2 );
+            case 'rectangle':
+                return $data['height'] * $data['width'];
             default:
                 return;
         }
