@@ -1,6 +1,3 @@
-// app.js
-
-require('./bootstrap');
 import React from 'react';
 import { render } from 'react-dom';
 

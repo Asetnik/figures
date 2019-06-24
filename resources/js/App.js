@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container'
+import { BrowserRouter } from "react-router-dom";
 
-import AddFigure from './components/AddFigure/AddFigure';
 import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
 class App extends Component {
     render() {
         return (
-            <div>
+            <BrowserRouter>
                 <Header />
-                <Container>
-                    <AddFigure />
-                </Container>
-            </div>
+                <Main />
+            </BrowserRouter>
         );
     }
 }

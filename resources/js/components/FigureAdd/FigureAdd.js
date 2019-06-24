@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import CircleForm from "../FiguresFroms/CircleForm/CircleForm";
-import TriangleForm from "../FiguresFroms/TriangleForm/TriangleForm";
-import SquareForm from "../FiguresFroms/SquareForm/SquareForm";
-import RectangleForm from "../FiguresFroms/RectangleForm/RectangleForm";
+import axios from 'axios';
 
+import CircleForm from "./FiguresForms/CircleForm/CircleForm";
+import TriangleForm from "./FiguresForms/TriangleForm/TriangleForm";
+import SquareForm from "./FiguresForms/SquareForm/SquareForm";
+import RectangleForm from "./FiguresForms/RectangleForm/RectangleForm";
 
-class AddFigure extends Component {
+class FigureAdd extends Component {
 
     constructor(props) {
         super(props);
@@ -36,13 +37,13 @@ class AddFigure extends Component {
     renderFigureForm() {
         switch (this.state.type_id) {
             case 1:
-                return <CircleForm type_id={this.state.type_id}/>;
+                return <CircleForm type_id={this.state.type_id} createFigure={this.createFigure} />;
             case 2:
-                return <TriangleForm type_id={this.state.type_id}/>;
+                return <TriangleForm type_id={this.state.type_id} createFigure={this.createFigure} />;
             case 3:
-                return <SquareForm type_id={this.state.type_id}/>;
+                return <SquareForm type_id={this.state.type_id} createFigure={this.createFigure} />;
             case 4:
-                return <RectangleForm type_id={this.state.type_id}/>;
+                return <RectangleForm type_id={this.state.type_id} createFigure={this.createFigure} />;
         }
     }
 
@@ -52,10 +53,23 @@ class AddFigure extends Component {
         });
     }
 
+    createFigure(e){
+        e.preventDefault();
+        axios
+            .post('/figures', {
+                    type_id: this.state.type_id,
+                data: this.state.data
+            })
+            .then(response => {
+                alert(response.data)
+            });
+    }
+
     render() {
         return (
             <div id="addFigure">
-                <select onChange={this.typeIdChange} name="type_id" className="form-control">
+                <h3>Select figure</h3>
+                <select onChange={this.typeIdChange} name="type_id" className="form-control w-25 mb-5">
                     {this.options()}
                 </select>
                 {this.renderFigureForm()}
@@ -64,4 +78,4 @@ class AddFigure extends Component {
     }
 }
 
-export default AddFigure;
+export default FigureAdd;

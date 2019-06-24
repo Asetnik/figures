@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from "react-bootstrap/Nav";
+import { Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import Container from 'react-bootstrap/Container';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            type_id: '',
-            data: ''
-        };
-    }
 
     render() {
         return (
             <div>
                 <Navbar bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                        <NavLink to='/' className="navbar-brand">Figures</NavLink>
                         <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
+                            <NavLink to='/' exact={true} activeClassName='active' className="nav-link">Add figure</NavLink>
+                            <NavLink to='/statistics' activeClassName='active' className="nav-link">Figures statistics</NavLink>
+                            <NavLink to='/figuresList' activeClassName='active' className="nav-link">Figures list</NavLink>
                         </Nav>
                     </Container>
                 </Navbar>
