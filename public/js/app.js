@@ -48203,11 +48203,11 @@ function (_Component) {
     key: "options",
     value: function options() {
       if (this.state.figures_types instanceof Array) {
-        return this.state.figures_types.map(function (figures_types, index) {
+        return this.state.figures_types.map(function (figure_type, index) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
             key: index,
-            value: figures_types.id
-          }, figures_types.type);
+            value: figure_type.id
+          }, figure_type.type);
         });
       }
     }
@@ -48327,12 +48327,18 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CircleForm).call(this, props));
     _this.state = {
+      MINVALUE: 0,
+      MAXVALUE: 100,
       type_id: props.type_id,
       data: {
         radius: 0
-      }
+      },
+      radiusValid: true,
+      formValid: true
     };
     _this.radiusChange = _this.radiusChange.bind(_assertThisInitialized(_this));
+    _this.radiusValidation = _this.radiusValidation.bind(_assertThisInitialized(_this));
+    _this.formValidation = _this.formValidation.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -48343,7 +48349,33 @@ function (_Component) {
         data: {
           radius: Number(e.target.value)
         }
+      }, this.radiusValidation);
+    }
+  }, {
+    key: "radiusValidation",
+    value: function radiusValidation() {
+      this.setState({
+        radiusValid: true
+      }, this.formValidation);
+
+      if (this.state.data.radius < this.state.MINVALUE || this.state.data.radius > this.state.MAXVALUE) {
+        this.setState({
+          radiusValid: false
+        }, this.formValidation);
+      }
+    }
+  }, {
+    key: "formValidation",
+    value: function formValidation() {
+      this.setState({
+        formValid: true
       });
+
+      if (!this.state.radiusValid) {
+        this.setState({
+          formValid: false
+        });
+      }
     }
   }, {
     key: "render",
@@ -48355,16 +48387,22 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add circle"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a, {
         onSubmit: this.props.createFigure.bind(this)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
-        controlId: "formCircleRaius"
+        controlId: "formCircleRadius"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Radius"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.radiusValid ? "is-valid" : "is-invalid",
         type: "number",
         onChange: this.radiusChange,
         name: "radius",
-        value: this.state.data.radius
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        value: this.state.data.radius,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.radiusValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        disabled: !this.state.formValid && "disabled",
         variant: "primary",
         type: "submit"
-      }, "Submit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Create figure"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "../images/circle.png"
@@ -48428,14 +48466,22 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(RectangleForm).call(this, props));
     _this.state = {
+      MINVALUE: 0,
+      MAXVALUE: 100,
       type_id: props.type_id,
       data: {
-        height: 0,
-        width: 0
-      }
+        height: 1,
+        width: 1
+      },
+      heightValid: true,
+      widthValid: true,
+      formValid: true
     };
     _this.heightChange = _this.heightChange.bind(_assertThisInitialized(_this));
     _this.widthChange = _this.widthChange.bind(_assertThisInitialized(_this));
+    _this.widthValidation = _this.widthValidation.bind(_assertThisInitialized(_this));
+    _this.heightValidation = _this.heightValidation.bind(_assertThisInitialized(_this));
+    _this.formValidation = _this.formValidation.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -48447,7 +48493,7 @@ function (_Component) {
           width: this.state.data["width"],
           height: Number(e.target.value)
         }
-      });
+      }, this.heightValidation);
     }
   }, {
     key: "widthChange",
@@ -48457,7 +48503,46 @@ function (_Component) {
           width: Number(e.target.value),
           height: this.state.data["height"]
         }
+      }, this.widthValidation);
+    }
+  }, {
+    key: "widthValidation",
+    value: function widthValidation() {
+      this.setState({
+        widthValid: true
+      }, this.formValidation);
+
+      if (this.state.data.width < this.state.MINVALUE || this.state.data.width > this.state.MAXVALUE) {
+        this.setState({
+          widthValid: false
+        }, this.formValidation);
+      }
+    }
+  }, {
+    key: "heightValidation",
+    value: function heightValidation() {
+      this.setState({
+        heightValid: true
+      }, this.formValidation);
+
+      if (this.state.data.height < this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE) {
+        this.setState({
+          heightValid: false
+        }, this.formValidation);
+      }
+    }
+  }, {
+    key: "formValidation",
+    value: function formValidation() {
+      this.setState({
+        formValid: true
       });
+
+      if (!this.state.heightValid || !this.state.widthValid) {
+        this.setState({
+          formValid: false
+        });
+      }
     }
   }, {
     key: "render",
@@ -48471,21 +48556,32 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
         controlId: "formRectangleHeight"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Height"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.heightValid ? "is-valid" : "is-invalid",
         type: "number",
         onChange: this.heightChange,
         name: "height",
-        value: this.state.data.height
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
+        value: this.state.data.height,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.heightValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
         controlId: "formRectangleWidth"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Width"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.widthValid ? "is-valid" : "is-invalid",
         type: "number",
         onChange: this.widthChange,
         name: "width",
-        value: this.state.data.width
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        value: this.state.data.width,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.widthValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        disabled: !this.state.formValid && "disabled",
         variant: "primary",
         type: "submit"
-      }, "Submit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Create figure"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "../images/rectangle.png"
@@ -48549,12 +48645,18 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SquareForm).call(this, props));
     _this.state = {
+      MINVALUE: 0,
+      MAXVALUE: 100,
       type_id: props.type_id,
       data: {
-        height: 0
-      }
+        height: 1
+      },
+      heightValid: true,
+      formValid: true
     };
     _this.heightChange = _this.heightChange.bind(_assertThisInitialized(_this));
+    _this.heightValidation = _this.heightValidation.bind(_assertThisInitialized(_this));
+    _this.formValidation = _this.formValidation.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -48565,7 +48667,33 @@ function (_Component) {
         data: {
           height: Number(e.target.value)
         }
+      }, this.heightValidation);
+    }
+  }, {
+    key: "heightValidation",
+    value: function heightValidation() {
+      this.setState({
+        heightValid: true
+      }, this.formValidation);
+
+      if (this.state.data.height < this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE) {
+        this.setState({
+          heightValid: false
+        }, this.formValidation);
+      }
+    }
+  }, {
+    key: "formValidation",
+    value: function formValidation() {
+      this.setState({
+        formValid: true
       });
+
+      if (!this.state.heightValid) {
+        this.setState({
+          formValid: false
+        });
+      }
     }
   }, {
     key: "render",
@@ -48579,14 +48707,20 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
         controlId: "formSquareHeight"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Height"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.heightValid ? "is-valid" : "is-invalid",
         type: "number",
         onChange: this.heightChange,
         name: "height",
-        value: this.state.data.height
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        value: this.state.data.height,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.heightValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        disabled: !this.state.formValid && "disabled",
         variant: "primary",
         type: "submit"
-      }, "Submit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Create figure"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "../images/square.png"
@@ -48638,32 +48772,44 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var SquareForm =
+var TriangleForm =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(SquareForm, _Component);
+  _inherits(TriangleForm, _Component);
 
-  function SquareForm(props) {
+  function TriangleForm(props) {
     var _this;
 
-    _classCallCheck(this, SquareForm);
+    _classCallCheck(this, TriangleForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SquareForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TriangleForm).call(this, props));
     _this.state = {
+      MINVALUE: 0,
+      MAXVALUE: 100,
       type_id: props.type_id,
       data: {
-        firstSide: 0,
-        secondSide: 0,
-        thirdSide: 0
-      }
+        firstSide: 1,
+        secondSide: 1,
+        thirdSide: 1
+      },
+      firstSideValid: true,
+      secondSideValid: true,
+      thirdSideValid: true,
+      triangleExists: true,
+      formValid: true
     };
     _this.firstSideChange = _this.firstSideChange.bind(_assertThisInitialized(_this));
     _this.secondSideChange = _this.secondSideChange.bind(_assertThisInitialized(_this));
     _this.thirdSideChange = _this.thirdSideChange.bind(_assertThisInitialized(_this));
+    _this.firstSideValidation = _this.firstSideValidation.bind(_assertThisInitialized(_this));
+    _this.secondSideValidation = _this.secondSideValidation.bind(_assertThisInitialized(_this));
+    _this.thirdSideValidation = _this.thirdSideValidation.bind(_assertThisInitialized(_this));
+    _this.triangleExists = _this.triangleExists.bind(_assertThisInitialized(_this));
+    _this.formValidation = _this.formValidation.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  _createClass(SquareForm, [{
+  _createClass(TriangleForm, [{
     key: "firstSideChange",
     value: function firstSideChange(e) {
       this.setState({
@@ -48672,7 +48818,7 @@ function (_Component) {
           secondSide: this.state.data["secondSide"],
           thirdSide: this.state.data["thirdSide"]
         }
-      });
+      }, this.firstSideValidation);
     }
   }, {
     key: "secondSideChange",
@@ -48683,7 +48829,7 @@ function (_Component) {
           secondSide: Number(e.target.value),
           thirdSide: this.state.data["thirdSide"]
         }
-      });
+      }, this.secondSideValidation);
     }
   }, {
     key: "thirdSideChange",
@@ -48694,7 +48840,72 @@ function (_Component) {
           secondSide: this.state.data["secondSide"],
           thirdSide: Number(e.target.value)
         }
+      }, this.thirdSideValidation);
+    }
+  }, {
+    key: "firstSideValidation",
+    value: function firstSideValidation() {
+      this.setState({
+        firstSideValid: true
+      }, this.triangleExists);
+
+      if (this.state.data.firstSide < this.state.MINVALUE || this.state.data.firstSide > this.state.MAXVALUE) {
+        this.setState({
+          firstSideValid: false
+        }, this.triangleExists);
+      }
+    }
+  }, {
+    key: "secondSideValidation",
+    value: function secondSideValidation() {
+      this.setState({
+        secondSideValid: true
+      }, this.triangleExists);
+
+      if (this.state.data.secondSide < this.state.MINVALUE || this.state.data.secondSide > this.state.MAXVALUE) {
+        this.setState({
+          secondSideValid: false
+        }, this.triangleExists);
+      }
+    }
+  }, {
+    key: "thirdSideValidation",
+    value: function thirdSideValidation() {
+      this.setState({
+        thirdSideValid: true
+      }, this.triangleExists);
+
+      if (this.state.data.thirdSide < this.state.MINVALUE || this.state.data.thirdSide > this.state.MAXVALUE) {
+        this.setState({
+          thirdSideValid: false
+        }, this.triangleExists);
+      }
+    }
+  }, {
+    key: "formValidation",
+    value: function formValidation() {
+      this.setState({
+        formValid: true
       });
+
+      if (!this.state.firstSideValid || !this.state.secondSideValid || !this.state.thirdSideValid || !this.state.triangleExists) {
+        this.setState({
+          formValid: false
+        });
+      }
+    }
+  }, {
+    key: "triangleExists",
+    value: function triangleExists() {
+      this.setState({
+        triangleExists: true
+      }, this.formValidation);
+
+      if (this.state.data.firstSide >= this.state.data.secondSide + this.state.data.thirdSide || this.state.data.secondSide >= this.state.data.firstSide + this.state.data.thirdSide || this.state.data.thirdSide >= this.state.data.firstSide + this.state.data.secondSide) {
+        this.setState({
+          triangleExists: false
+        }, this.formValidation);
+      }
     }
   }, {
     key: "render",
@@ -48708,28 +48919,46 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
         controlId: "formTriangleFirstSide"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "First side"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.firstSideValid ? "is-valid" : "is-invalid",
         type: "number",
         onChange: this.firstSideChange,
         name: "firstSide",
-        value: this.state.data.firstSide
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
+        value: this.state.data.firstSide,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.firstSideValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
         controlId: "formTriangleSecondSide"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Second side"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.secondSideValid ? "is-valid" : "is-invalid",
         type: "number",
         onChange: this.secondSideChange,
         name: "secondSide",
-        value: this.state.data.secondSide
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
+        value: this.state.data.secondSide,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.secondSideValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
         controlId: "formTriangleThirdSide"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Third side"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.thirdSideValid ? "is-valid" : "is-invalid",
         type: "number",
         onChange: this.thirdSideChange,
         name: "thirdSide",
-        value: this.state.data.thirdSide
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        value: this.state.data.thirdSide,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.thirdSideValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), !this.state.triangleExists && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-danger"
+      }, "Triangle with such sides does not exist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        disabled: !this.state.formValid && "disabled",
         variant: "primary",
         type: "submit"
-      }, "Submit"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Create figure"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "../images/triangle.png"
@@ -48737,10 +48966,10 @@ function (_Component) {
     }
   }]);
 
-  return SquareForm;
+  return TriangleForm;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (SquareForm);
+/* harmony default export */ __webpack_exports__["default"] = (TriangleForm);
 
 /***/ }),
 

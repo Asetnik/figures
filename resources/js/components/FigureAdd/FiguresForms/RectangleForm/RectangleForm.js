@@ -7,14 +7,22 @@ class RectangleForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            MINVALUE: 0,
+            MAXVALUE: 100,
             type_id: props.type_id,
             data: {
-                height: 0,
-                width: 0
-            }
+                height: 1,
+                width: 1
+            },
+            heightValid: true,
+            widthValid: true,
+            formValid: true
         };
         this.heightChange = this.heightChange.bind(this);
         this.widthChange = this.widthChange.bind(this);
+        this.widthValidation = this.widthValidation.bind(this);
+        this.heightValidation = this.heightValidation.bind(this);
+        this.formValidation = this.formValidation.bind(this);
     }
 
     heightChange(e) {
@@ -23,7 +31,7 @@ class RectangleForm extends Component {
                 width: this.state.data["width"],
                 height: Number(e.target.value)
             }
-        });
+        }, this.heightValidation);
     }
 
     widthChange(e) {
@@ -32,7 +40,43 @@ class RectangleForm extends Component {
                 width: Number(e.target.value),
                 height: this.state.data["height"]
             }
+        }, this.widthValidation);
+    }
+
+    widthValidation() {
+        this.setState({
+            widthValid: true
+        }, this.formValidation);
+
+        if( this.state.data.width < this.state.MINVALUE || this.state.data.width > this.state.MAXVALUE ) {
+            this.setState({
+                widthValid: false
+            }, this.formValidation);
+        }
+    }
+
+    heightValidation() {
+        this.setState({
+            heightValid: true
+        }, this.formValidation);
+
+        if( this.state.data.height < this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE ) {
+            this.setState({
+                heightValid: false
+            }, this.formValidation);
+        }
+    }
+
+    formValidation(){
+        this.setState({
+            formValid: true
         });
+
+        if( !this.state.heightValid || !this.state.widthValid ) {
+            this.setState({
+                formValid: false
+            });
+        }
     }
 
     render() {
@@ -43,14 +87,32 @@ class RectangleForm extends Component {
                     <Form onSubmit={this.props.createFigure.bind(this)}>
                         <Form.Group controlId="formRectangleHeight">
                             <Form.Label>Height</Form.Label>
-                            <Form.Control type="number" onChange={this.heightChange} name="height" value={this.state.data.height}/>
+                            <Form.Control
+                                className={this.state.heightValid ? "is-valid" : "is-invalid"}
+                                type="number"
+                                onChange={this.heightChange}
+                                name="height"
+                                value={this.state.data.height}
+                                min={this.state.MINVALUE}
+                                max={this.state.MAXVALUE}
+                            />
+                            {  (!this.state.heightValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
                         <Form.Group controlId="formRectangleWidth">
                             <Form.Label>Width</Form.Label>
-                            <Form.Control type="number" onChange={this.widthChange} name="width" value={this.state.data.width}/>
+                            <Form.Control
+                                className={this.state.widthValid ? "is-valid" : "is-invalid"}
+                                type="number"
+                                onChange={this.widthChange}
+                                name="width"
+                                value={this.state.data.width}
+                                min={this.state.MINVALUE}
+                                max={this.state.MAXVALUE}
+                            />
+                            {  (!this.state.widthValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
+                        <Button disabled={ (!this.state.formValid) && "disabled" } variant="primary" type="submit">
+                            Create figure
                         </Button>
                     </Form>
                 </div>

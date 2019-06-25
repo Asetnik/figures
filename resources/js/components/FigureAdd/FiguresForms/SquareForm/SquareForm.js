@@ -7,12 +7,18 @@ class SquareForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            MINVALUE: 0,
+            MAXVALUE: 100,
             type_id: props.type_id,
             data: {
-                height: 0
-            }
+                height: 1
+            },
+            heightValid: true,
+            formValid: true
         };
         this.heightChange = this.heightChange.bind(this);
+        this.heightValidation = this.heightValidation.bind(this);
+        this.formValidation = this.formValidation.bind(this);
     }
 
     heightChange(e) {
@@ -20,7 +26,31 @@ class SquareForm extends Component {
             data: {
                 height: Number(e.target.value)
             }
+        }, this.heightValidation);
+    }
+
+    heightValidation(){
+        this.setState({
+            heightValid: true
+        }, this.formValidation);
+
+        if( this.state.data.height < this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE ) {
+            this.setState({
+                heightValid: false
+            }, this.formValidation);
+        }
+    }
+
+    formValidation() {
+        this.setState({
+            formValid: true
         });
+
+        if( !this.state.heightValid ) {
+            this.setState({
+                formValid: false
+            });
+        }
     }
 
     render() {
@@ -31,10 +61,19 @@ class SquareForm extends Component {
                     <Form onSubmit={this.props.createFigure.bind(this)}>
                         <Form.Group controlId="formSquareHeight">
                             <Form.Label>Height</Form.Label>
-                            <Form.Control type="number" onChange={this.heightChange} name="height" value={this.state.data.height}/>
+                            <Form.Control
+                                className={this.state.heightValid ? "is-valid" : "is-invalid"}
+                                type="number"
+                                onChange={this.heightChange}
+                                name="height"
+                                value={this.state.data.height}
+                                min={this.state.MINVALUE}
+                                max={this.state.MAXVALUE}
+                            />
+                            {  (!this.state.heightValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
+                        <Button disabled={ (!this.state.formValid) && "disabled" } variant="primary" type="submit">
+                            Create figure
                         </Button>
                     </Form>
                 </div>

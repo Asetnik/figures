@@ -7,12 +7,16 @@ class CircleForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            MINVALUE: 0,
+            MAXVALUE: 100,
             type_id: props.type_id,
-            data: {
-                radius: 0
-            }
+            data: { radius: 0 },
+            radiusValid: true,
+            formValid: true
         };
         this.radiusChange = this.radiusChange.bind(this);
+        this.radiusValidation = this.radiusValidation.bind(this);
+        this.formValidation = this.formValidation.bind(this);
     }
 
     radiusChange(e) {
@@ -20,7 +24,31 @@ class CircleForm extends Component {
            data: {
                radius: Number(e.target.value)
            }
+        }, this.radiusValidation);
+    }
+
+    radiusValidation() {
+        this.setState({
+            radiusValid: true
+        }, this.formValidation);
+
+        if( this.state.data.radius < this.state.MINVALUE || this.state.data.radius > this.state.MAXVALUE ) {
+            this.setState({
+                radiusValid: false
+            }, this.formValidation);
+        }
+    }
+
+    formValidation() {
+        this.setState({
+            formValid: true
         });
+
+        if( !this.state.radiusValid ) {
+            this.setState({
+                formValid: false
+            });
+        }
     }
 
     render() {
@@ -29,12 +57,21 @@ class CircleForm extends Component {
                 <div className="col-6">
                     <h3>Add circle</h3>
                     <Form onSubmit={this.props.createFigure.bind(this)}>
-                        <Form.Group controlId="formCircleRaius">
+                        <Form.Group controlId="formCircleRadius">
                             <Form.Label>Radius</Form.Label>
-                            <Form.Control type="number" onChange={this.radiusChange} name="radius" value={this.state.data.radius} />
+                            <Form.Control
+                                className={this.state.radiusValid ? "is-valid" : "is-invalid"}
+                                type="number"
+                                onChange={this.radiusChange}
+                                name="radius"
+                                value={this.state.data.radius}
+                                min={this.state.MINVALUE}
+                                max={this.state.MAXVALUE}
+                            />
+                            {  (!this.state.radiusValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
+                        <Button disabled={ (!this.state.formValid) && "disabled" } variant="primary" type="submit">
+                            Create figure
                         </Button>
                     </Form>
                 </div>

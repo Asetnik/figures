@@ -28,8 +28,8 @@ class FigureAdd extends Component {
 
     options(){
         if (this.state.figures_types instanceof Array) {
-            return this.state.figures_types.map(function (figures_types, index) {
-                return <option key={index} value={figures_types.id}>{figures_types.type}</option>;
+            return this.state.figures_types.map(function (figure_type, index) {
+                return <option key={index} value={figure_type.id}>{figure_type.type}</option>;
             })
         }
     }
@@ -57,7 +57,7 @@ class FigureAdd extends Component {
         e.preventDefault();
         axios
             .post('/figures', {
-                    type_id: this.state.type_id,
+                type_id: this.state.type_id,
                 data: this.state.data
             })
             .then(response => {
