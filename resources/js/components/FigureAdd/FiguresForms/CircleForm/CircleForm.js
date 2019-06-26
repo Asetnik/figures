@@ -10,7 +10,7 @@ class CircleForm extends Component {
             MINVALUE: 0,
             MAXVALUE: 100,
             type_id: props.type_id,
-            data: { radius: 0 },
+            data: { radius: 1 },
             radiusValid: true,
             formValid: true
         };
@@ -32,7 +32,7 @@ class CircleForm extends Component {
             radiusValid: true
         }, this.formValidation);
 
-        if( this.state.data.radius < this.state.MINVALUE || this.state.data.radius > this.state.MAXVALUE ) {
+        if( this.state.data.radius <= this.state.MINVALUE || this.state.data.radius > this.state.MAXVALUE ) {
             this.setState({
                 radiusValid: false
             }, this.formValidation);

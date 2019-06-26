@@ -1,5 +1,3 @@
-<!-- welcome.blade.php -->
-
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -9,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Laravel</title>
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="root"></div>

@@ -15,7 +15,8 @@ class FiguresController extends Controller
      */
     public function index()
     {
-        //
+        $figures = Figure::orderByDesc('square')->join('figures_type', 'figures.type_id', '=', 'figures_type.id')->select('figures.id', 'square', 'type')->get();
+        return response()->json($figures);
     }
 
     /**
@@ -36,10 +37,6 @@ class FiguresController extends Controller
      */
     public function store(Request $request)
     {
-//        $this->validate($request, [
-//            'type_id' => 'required|number',
-//            'data' => 'required'
-//        ]);
         $typeId = $request->get('type_id');
         $typeName = FigureType::getTypeName($typeId);
         $data = $request->get('data');
@@ -94,6 +91,11 @@ class FiguresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if($figure = Figure::find($id)) {
+            $figure->delete();
+            return response()->json('deleted');
+        } else {
+            return response()->json('not deleted');
+        }
     }
 }

@@ -16,6 +16,7 @@ class FigureAdd extends Component {
             data: ''
         };
         this.typeIdChange = this.typeIdChange.bind(this);
+        this.options = this.options.bind(this);
     }
 
     componentWillMount() {
@@ -68,7 +69,7 @@ class FigureAdd extends Component {
     render() {
         return (
             <div id="addFigure">
-                <h3>Select figure</h3>
+                <h3>Add figure</h3>
                 <select onChange={this.typeIdChange} name="type_id" className="form-control w-25 mb-5">
                     {this.options()}
                 </select>

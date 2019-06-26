@@ -48,7 +48,7 @@ class RectangleForm extends Component {
             widthValid: true
         }, this.formValidation);
 
-        if( this.state.data.width < this.state.MINVALUE || this.state.data.width > this.state.MAXVALUE ) {
+        if( this.state.data.width <= this.state.MINVALUE || this.state.data.width > this.state.MAXVALUE ) {
             this.setState({
                 widthValid: false
             }, this.formValidation);
@@ -60,7 +60,7 @@ class RectangleForm extends Component {
             heightValid: true
         }, this.formValidation);
 
-        if( this.state.data.height < this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE ) {
+        if( this.state.data.height <= this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE ) {
             this.setState({
                 heightValid: false
             }, this.formValidation);

@@ -34,7 +34,7 @@ class SquareForm extends Component {
             heightValid: true
         }, this.formValidation);
 
-        if( this.state.data.height < this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE ) {
+        if( this.state.data.height <= this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE ) {
             this.setState({
                 heightValid: false
             }, this.formValidation);

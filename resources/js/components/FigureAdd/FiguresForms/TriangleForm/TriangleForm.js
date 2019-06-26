@@ -68,7 +68,7 @@ class TriangleForm extends Component {
             firstSideValid: true
         }, this.triangleExists);
 
-        if( this.state.data.firstSide < this.state.MINVALUE || this.state.data.firstSide > this.state.MAXVALUE ) {
+        if( this.state.data.firstSide <= this.state.MINVALUE || this.state.data.firstSide > this.state.MAXVALUE ) {
             this.setState({
                 firstSideValid: false
             }, this.triangleExists);
@@ -80,7 +80,7 @@ class TriangleForm extends Component {
             secondSideValid: true
         }, this.triangleExists);
 
-        if( this.state.data.secondSide < this.state.MINVALUE || this.state.data.secondSide > this.state.MAXVALUE ) {
+        if( this.state.data.secondSide <= this.state.MINVALUE || this.state.data.secondSide > this.state.MAXVALUE ) {
             this.setState({
                 secondSideValid: false
             }, this.triangleExists);
@@ -92,7 +92,7 @@ class TriangleForm extends Component {
             thirdSideValid: true
         }, this.triangleExists);
 
-        if( this.state.data.thirdSide < this.state.MINVALUE || this.state.data.thirdSide > this.state.MAXVALUE ) {
+        if( this.state.data.thirdSide <= this.state.MINVALUE || this.state.data.thirdSide > this.state.MAXVALUE ) {
             this.setState({
                 thirdSideValid: false
             }, this.triangleExists);
@@ -171,6 +171,7 @@ class TriangleForm extends Component {
                             {  (!this.state.thirdSideValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
                         {  (!this.state.triangleExists) && <div className="alert alert-danger">
+                            <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
                             Triangle with such sides does not exist</div> }
                         <Button disabled={ (!this.state.formValid) && "disabled" } variant="primary" type="submit">
                             Create figure

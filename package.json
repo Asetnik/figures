@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "react-bootstrap": "^1.0.0-beta.9",
-        "react-router-dom": "^5.0.1"
+        "react-router-dom": "^5.0.1",
+        "sweetalert2": "^8.13.0",
+        "sweetalert2-react-content": "^1.1.0"
     }
 }
