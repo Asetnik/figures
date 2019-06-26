@@ -53,7 +53,6 @@ class FiguresList extends Component {
                                 timer: 1500
                             });
                         }
-
                     });
             }
         })

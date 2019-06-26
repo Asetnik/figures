@@ -7,62 +7,134 @@ class RectangleForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            MINVALUE: 0,
+            MINVALUE: -100,
             MAXVALUE: 100,
             type_id: props.type_id,
             data: {
-                height: 1,
-                width: 1
+                firstX: -1,
+                firstY: -1,
+                secondX: 1,
+                secondY: 1
             },
-            heightValid: true,
-            widthValid: true,
+            firstXValid: true,
+            firstYValid: true,
+            secondXValid: true,
+            secondYValid: true,
+            rectangleExists: true,
             formValid: true
         };
-        this.heightChange = this.heightChange.bind(this);
-        this.widthChange = this.widthChange.bind(this);
-        this.widthValidation = this.widthValidation.bind(this);
-        this.heightValidation = this.heightValidation.bind(this);
+        this.firstXChange = this.firstXChange.bind(this);
+        this.firstYChange = this.firstYChange.bind(this);
+        this.firstXValidation = this.firstXValidation.bind(this);
+        this.firstYValidation = this.firstYValidation.bind(this);
+        this.secondXChange = this.secondXChange.bind(this);
+        this.secondYChange = this.secondYChange.bind(this);
+        this.secondXValidation = this.secondXValidation.bind(this);
+        this.secondYValidation = this.secondYValidation.bind(this);
+        this.rectangleExists = this.rectangleExists.bind(this);
         this.formValidation = this.formValidation.bind(this);
     }
 
-    heightChange(e) {
+    firstXChange(e) {
         this.setState({
             data: {
-                width: this.state.data["width"],
-                height: Number(e.target.value)
+                firstX: Number(e.target.value),
+                firstY: this.state.data["firstY"],
+                secondX: this.state.data["secondX"],
+                secondY: this.state.data["secondY"]
             }
-        }, this.heightValidation);
+        }, this.firstXValidation);
     }
 
-    widthChange(e) {
+    firstYChange(e) {
         this.setState({
             data: {
-                width: Number(e.target.value),
-                height: this.state.data["height"]
+                firstX: this.state.data["firstX"],
+                firstY: Number(e.target.value),
+                secondX: this.state.data["secondX"],
+                secondY: this.state.data["secondY"]
             }
-        }, this.widthValidation);
+        }, this.firstYValidation);
     }
 
-    widthValidation() {
+    secondXChange(e) {
         this.setState({
-            widthValid: true
-        }, this.formValidation);
+            data: {
+                firstX: this.state.data["firstX"],
+                firstY: this.state.data["firstY"],
+                secondX: Number(e.target.value),
+                secondY: this.state.data["secondY"]
+            }
+        }, this.secondXValidation);
+    }
 
-        if( this.state.data.width <= this.state.MINVALUE || this.state.data.width > this.state.MAXVALUE ) {
+    secondYChange(e) {
+        this.setState({
+            data: {
+                firstX: this.state.data["firstX"],
+                firstY: this.state.data["firstY"],
+                secondX: this.state.data["secondX"],
+                secondY: Number(e.target.value)
+            }
+        }, this.secondYValidation);
+    }
+
+    firstXValidation() {
+        this.setState({
+            firstXValid: true
+        }, this.rectangleExists);
+
+        if( this.state.data.firstX < this.state.MINVALUE || this.state.data.firstX > this.state.MAXVALUE ) {
             this.setState({
-                widthValid: false
-            }, this.formValidation);
+                firstXValid: false
+            }, this.rectangleExists);
         }
     }
 
-    heightValidation() {
+    firstYValidation() {
         this.setState({
-            heightValid: true
+            firstYValid: true
+        }, this.rectangleExists);
+
+        if( this.state.data.firstY < this.state.MINVALUE || this.state.data.firstY > this.state.MAXVALUE ) {
+            this.setState({
+                firstYValid: false
+            }, this.rectangleExists);
+        }
+    }
+
+    secondXValidation() {
+        this.setState({
+            secondXValid: true
+        }, this.rectangleExists);
+
+        if( this.state.data.secondX < this.state.MINVALUE || this.state.data.secondX > this.state.MAXVALUE ) {
+            this.setState({
+                secondXValid: false
+            }, this.rectangleExists);
+        }
+    }
+
+    secondYValidation() {
+        this.setState({
+            secondYValid: true
+        }, this.rectangleExists);
+
+        if( this.state.data.secondY < this.state.MINVALUE || this.state.data.secondY > this.state.MAXVALUE ) {
+            this.setState({
+                secondYValid: false
+            }, this.rectangleExists);
+        }
+    }
+
+    rectangleExists() {
+        this.setState({
+            rectangleExists: true
         }, this.formValidation);
 
-        if( this.state.data.height <= this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE ) {
+        if( this.state.data.firstX === this.state.data.secondX && this.state.data.firstY === this.state.data.secondY) {
             this.setState({
-                heightValid: false
+                rectangleExists: false
             }, this.formValidation);
         }
     }
@@ -72,7 +144,7 @@ class RectangleForm extends Component {
             formValid: true
         });
 
-        if( !this.state.heightValid || !this.state.widthValid ) {
+        if( !this.state.firstXValid || !this.state.firstYValid || !this.state.secondXValid || !this.state.secondYValid || !this.state.rectangleExists) {
             this.setState({
                 formValid: false
             });
@@ -85,32 +157,61 @@ class RectangleForm extends Component {
                 <div className="col-6">
                     <h3>Add rectangle</h3>
                     <Form onSubmit={this.props.createFigure.bind(this)}>
-                        <Form.Group controlId="formRectangleHeight">
-                            <Form.Label>Height</Form.Label>
+                        <Form.Group controlId="formRectangleFirstX">
+                            <Form.Label>First X</Form.Label>
                             <Form.Control
-                                className={this.state.heightValid ? "is-valid" : "is-invalid"}
+                                className={this.state.firstXValid ? "is-valid" : "is-invalid"}
                                 type="number"
-                                onChange={this.heightChange}
-                                name="height"
-                                value={this.state.data.height}
+                                onChange={this.firstXChange}
+                                name="firstX"
+                                value={this.state.data.firstX}
                                 min={this.state.MINVALUE}
                                 max={this.state.MAXVALUE}
                             />
-                            {  (!this.state.heightValid) && <div className="text text-danger">Incorrect value</div> }
+                            {  (!this.state.firstXValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
-                        <Form.Group controlId="formRectangleWidth">
-                            <Form.Label>Width</Form.Label>
+                        <Form.Group controlId="formRectangleFirstY">
+                            <Form.Label>First Y</Form.Label>
                             <Form.Control
-                                className={this.state.widthValid ? "is-valid" : "is-invalid"}
+                                className={this.state.firstYValid ? "is-valid" : "is-invalid"}
                                 type="number"
-                                onChange={this.widthChange}
-                                name="width"
-                                value={this.state.data.width}
+                                onChange={this.firstYChange}
+                                name="firstY"
+                                value={this.state.data.firstY}
                                 min={this.state.MINVALUE}
                                 max={this.state.MAXVALUE}
                             />
-                            {  (!this.state.widthValid) && <div className="text text-danger">Incorrect value</div> }
+                            {  (!this.state.firstYValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
+                        <Form.Group controlId="formRectangleSecondX">
+                            <Form.Label>Second X</Form.Label>
+                            <Form.Control
+                                className={this.state.secondXValid ? "is-valid" : "is-invalid"}
+                                type="number"
+                                onChange={this.secondXChange}
+                                name="secondX"
+                                value={this.state.data.secondX}
+                                min={this.state.MINVALUE}
+                                max={this.state.MAXVALUE}
+                            />
+                            {  (!this.state.secondXValid) && <div className="text text-danger">Incorrect value</div> }
+                        </Form.Group>
+                        <Form.Group controlId="formRectangleSecondY">
+                            <Form.Label>Second Y</Form.Label>
+                            <Form.Control
+                                className={this.state.secondYValid ? "is-valid" : "is-invalid"}
+                                type="number"
+                                onChange={this.secondYChange}
+                                name="secondY"
+                                value={this.state.data.secondY}
+                                min={this.state.MINVALUE}
+                                max={this.state.MAXVALUE}
+                            />
+                            {  (!this.state.secondYValid) && <div className="text text-danger">Incorrect value</div> }
+                        </Form.Group>
+                        {  (!this.state.rectangleExists) && <div className="alert alert-danger">
+                            <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            Rectangle with such points does not exist</div> }
                         <Button disabled={ (!this.state.formValid) && "disabled" } variant="primary" type="submit">
                             Create figure
                         </Button>

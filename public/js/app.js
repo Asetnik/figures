@@ -51296,10 +51296,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _FiguresForms_CircleForm_CircleForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FiguresForms/CircleForm/CircleForm */ "./resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js");
-/* harmony import */ var _FiguresForms_TriangleForm_TriangleForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FiguresForms/TriangleForm/TriangleForm */ "./resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js");
-/* harmony import */ var _FiguresForms_SquareForm_SquareForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FiguresForms/SquareForm/SquareForm */ "./resources/js/components/FigureAdd/FiguresForms/SquareForm/SquareForm.js");
-/* harmony import */ var _FiguresForms_RectangleForm_RectangleForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FiguresForms/RectangleForm/RectangleForm */ "./resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _FiguresForms_CircleForm_CircleForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FiguresForms/CircleForm/CircleForm */ "./resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js");
+/* harmony import */ var _FiguresForms_TriangleForm_TriangleForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FiguresForms/TriangleForm/TriangleForm */ "./resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js");
+/* harmony import */ var _FiguresForms_SquareForm_SquareForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FiguresForms/SquareForm/SquareForm */ "./resources/js/components/FigureAdd/FiguresForms/SquareForm/SquareForm.js");
+/* harmony import */ var _FiguresForms_RectangleForm_RectangleForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FiguresForms/RectangleForm/RectangleForm */ "./resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -51317,6 +51319,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -51374,25 +51377,25 @@ function (_Component) {
     value: function renderFigureForm() {
       switch (this.state.type_id) {
         case 1:
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FiguresForms_CircleForm_CircleForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FiguresForms_CircleForm_CircleForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
             type_id: this.state.type_id,
             createFigure: this.createFigure
           });
 
         case 2:
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FiguresForms_TriangleForm_TriangleForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FiguresForms_TriangleForm_TriangleForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
             type_id: this.state.type_id,
             createFigure: this.createFigure
           });
 
         case 3:
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FiguresForms_SquareForm_SquareForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FiguresForms_SquareForm_SquareForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
             type_id: this.state.type_id,
             createFigure: this.createFigure
           });
 
         case 4:
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FiguresForms_RectangleForm_RectangleForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FiguresForms_RectangleForm_RectangleForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
             type_id: this.state.type_id,
             createFigure: this.createFigure
           });
@@ -51413,7 +51416,21 @@ function (_Component) {
         type_id: this.state.type_id,
         data: this.state.data
       }).then(function (response) {
-        alert(response.data);
+        if (response.data) {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire({
+            type: 'success',
+            title: 'Square of figure ' + response.data + '. Figure was added',
+            showConfirmButton: false,
+            timer: 2500
+          });
+        } else {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire({
+            type: 'error',
+            title: 'Figure not added!',
+            showConfirmButton: false,
+            timer: 2500
+          });
+        }
       });
     }
   }, {
@@ -51624,68 +51641,145 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(RectangleForm).call(this, props));
     _this.state = {
-      MINVALUE: 0,
+      MINVALUE: -100,
       MAXVALUE: 100,
       type_id: props.type_id,
       data: {
-        height: 1,
-        width: 1
+        firstX: -1,
+        firstY: -1,
+        secondX: 1,
+        secondY: 1
       },
-      heightValid: true,
-      widthValid: true,
+      firstXValid: true,
+      firstYValid: true,
+      secondXValid: true,
+      secondYValid: true,
+      rectangleExists: true,
       formValid: true
     };
-    _this.heightChange = _this.heightChange.bind(_assertThisInitialized(_this));
-    _this.widthChange = _this.widthChange.bind(_assertThisInitialized(_this));
-    _this.widthValidation = _this.widthValidation.bind(_assertThisInitialized(_this));
-    _this.heightValidation = _this.heightValidation.bind(_assertThisInitialized(_this));
+    _this.firstXChange = _this.firstXChange.bind(_assertThisInitialized(_this));
+    _this.firstYChange = _this.firstYChange.bind(_assertThisInitialized(_this));
+    _this.firstXValidation = _this.firstXValidation.bind(_assertThisInitialized(_this));
+    _this.firstYValidation = _this.firstYValidation.bind(_assertThisInitialized(_this));
+    _this.secondXChange = _this.secondXChange.bind(_assertThisInitialized(_this));
+    _this.secondYChange = _this.secondYChange.bind(_assertThisInitialized(_this));
+    _this.secondXValidation = _this.secondXValidation.bind(_assertThisInitialized(_this));
+    _this.secondYValidation = _this.secondYValidation.bind(_assertThisInitialized(_this));
+    _this.rectangleExists = _this.rectangleExists.bind(_assertThisInitialized(_this));
     _this.formValidation = _this.formValidation.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(RectangleForm, [{
-    key: "heightChange",
-    value: function heightChange(e) {
+    key: "firstXChange",
+    value: function firstXChange(e) {
       this.setState({
         data: {
-          width: this.state.data["width"],
-          height: Number(e.target.value)
+          firstX: Number(e.target.value),
+          firstY: this.state.data["firstY"],
+          secondX: this.state.data["secondX"],
+          secondY: this.state.data["secondY"]
         }
-      }, this.heightValidation);
+      }, this.firstXValidation);
     }
   }, {
-    key: "widthChange",
-    value: function widthChange(e) {
+    key: "firstYChange",
+    value: function firstYChange(e) {
       this.setState({
         data: {
-          width: Number(e.target.value),
-          height: this.state.data["height"]
+          firstX: this.state.data["firstX"],
+          firstY: Number(e.target.value),
+          secondX: this.state.data["secondX"],
+          secondY: this.state.data["secondY"]
         }
-      }, this.widthValidation);
+      }, this.firstYValidation);
     }
   }, {
-    key: "widthValidation",
-    value: function widthValidation() {
+    key: "secondXChange",
+    value: function secondXChange(e) {
       this.setState({
-        widthValid: true
-      }, this.formValidation);
+        data: {
+          firstX: this.state.data["firstX"],
+          firstY: this.state.data["firstY"],
+          secondX: Number(e.target.value),
+          secondY: this.state.data["secondY"]
+        }
+      }, this.secondXValidation);
+    }
+  }, {
+    key: "secondYChange",
+    value: function secondYChange(e) {
+      this.setState({
+        data: {
+          firstX: this.state.data["firstX"],
+          firstY: this.state.data["firstY"],
+          secondX: this.state.data["secondX"],
+          secondY: Number(e.target.value)
+        }
+      }, this.secondYValidation);
+    }
+  }, {
+    key: "firstXValidation",
+    value: function firstXValidation() {
+      this.setState({
+        firstXValid: true
+      }, this.rectangleExists);
 
-      if (this.state.data.width <= this.state.MINVALUE || this.state.data.width > this.state.MAXVALUE) {
+      if (this.state.data.firstX < this.state.MINVALUE || this.state.data.firstX > this.state.MAXVALUE) {
         this.setState({
-          widthValid: false
-        }, this.formValidation);
+          firstXValid: false
+        }, this.rectangleExists);
       }
     }
   }, {
-    key: "heightValidation",
-    value: function heightValidation() {
+    key: "firstYValidation",
+    value: function firstYValidation() {
       this.setState({
-        heightValid: true
+        firstYValid: true
+      }, this.rectangleExists);
+
+      if (this.state.data.firstY < this.state.MINVALUE || this.state.data.firstY > this.state.MAXVALUE) {
+        this.setState({
+          firstYValid: false
+        }, this.rectangleExists);
+      }
+    }
+  }, {
+    key: "secondXValidation",
+    value: function secondXValidation() {
+      this.setState({
+        secondXValid: true
+      }, this.rectangleExists);
+
+      if (this.state.data.secondX < this.state.MINVALUE || this.state.data.secondX > this.state.MAXVALUE) {
+        this.setState({
+          secondXValid: false
+        }, this.rectangleExists);
+      }
+    }
+  }, {
+    key: "secondYValidation",
+    value: function secondYValidation() {
+      this.setState({
+        secondYValid: true
+      }, this.rectangleExists);
+
+      if (this.state.data.secondY < this.state.MINVALUE || this.state.data.secondY > this.state.MAXVALUE) {
+        this.setState({
+          secondYValid: false
+        }, this.rectangleExists);
+      }
+    }
+  }, {
+    key: "rectangleExists",
+    value: function rectangleExists() {
+      this.setState({
+        rectangleExists: true
       }, this.formValidation);
 
-      if (this.state.data.height <= this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE) {
+      if (this.state.data.firstX === this.state.data.secondX && this.state.data.firstY === this.state.data.secondY) {
         this.setState({
-          heightValid: false
+          rectangleExists: false
         }, this.formValidation);
       }
     }
@@ -51696,7 +51790,7 @@ function (_Component) {
         formValid: true
       });
 
-      if (!this.state.heightValid || !this.state.widthValid) {
+      if (!this.state.firstXValid || !this.state.firstYValid || !this.state.secondXValid || !this.state.secondYValid || !this.state.rectangleExists) {
         this.setState({
           formValid: false
         });
@@ -51712,30 +51806,59 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Add rectangle"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a, {
         onSubmit: this.props.createFigure.bind(this)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
-        controlId: "formRectangleHeight"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Height"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
-        className: this.state.heightValid ? "is-valid" : "is-invalid",
+        controlId: "formRectangleFirstX"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "First X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.firstXValid ? "is-valid" : "is-invalid",
         type: "number",
-        onChange: this.heightChange,
-        name: "height",
-        value: this.state.data.height,
+        onChange: this.firstXChange,
+        name: "firstX",
+        value: this.state.data.firstX,
         min: this.state.MINVALUE,
         max: this.state.MAXVALUE
-      }), !this.state.heightValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), !this.state.firstXValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text text-danger"
       }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
-        controlId: "formRectangleWidth"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Width"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
-        className: this.state.widthValid ? "is-valid" : "is-invalid",
+        controlId: "formRectangleFirstY"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "First Y"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.firstYValid ? "is-valid" : "is-invalid",
         type: "number",
-        onChange: this.widthChange,
-        name: "width",
-        value: this.state.data.width,
+        onChange: this.firstYChange,
+        name: "firstY",
+        value: this.state.data.firstY,
         min: this.state.MINVALUE,
         max: this.state.MAXVALUE
-      }), !this.state.widthValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), !this.state.firstYValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text text-danger"
-      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
+        controlId: "formRectangleSecondX"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Second X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.secondXValid ? "is-valid" : "is-invalid",
+        type: "number",
+        onChange: this.secondXChange,
+        name: "secondX",
+        value: this.state.data.secondX,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.secondXValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Group, {
+        controlId: "formRectangleSecondY"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Label, null, "Second Y"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_1___default.a.Control, {
+        className: this.state.secondYValid ? "is-valid" : "is-invalid",
+        type: "number",
+        onChange: this.secondYChange,
+        name: "secondY",
+        value: this.state.data.secondY,
+        min: this.state.MINVALUE,
+        max: this.state.MAXVALUE
+      }), !this.state.secondYValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text text-danger"
+      }, "Incorrect value")), !this.state.rectangleExists && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert alert-danger"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-exclamation-circle",
+        "aria-hidden": "true"
+      }), "Rectangle with such points does not exist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
         disabled: !this.state.formValid && "disabled",
         variant: "primary",
         type: "submit"

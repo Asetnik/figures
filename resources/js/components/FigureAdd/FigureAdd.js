@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import Swal from 'sweetalert2';
 import CircleForm from "./FiguresForms/CircleForm/CircleForm";
 import TriangleForm from "./FiguresForms/TriangleForm/TriangleForm";
 import SquareForm from "./FiguresForms/SquareForm/SquareForm";
@@ -62,7 +62,21 @@ class FigureAdd extends Component {
                 data: this.state.data
             })
             .then(response => {
-                alert(response.data)
+                if(response.data) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Square of figure ' + response.data + '. Figure was added',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                } else {
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Figure not added!',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                }
             });
     }
 

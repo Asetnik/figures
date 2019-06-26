@@ -46,7 +46,7 @@ class FiguresController extends Controller
         $square = Figure::calcSquare($typeName, $data);
         $figure->square = $square;
         $figure->save();
-        return response()->json('Figure added. Square is '. $square);
+        return response()->json($square);
     }
 
     /**
