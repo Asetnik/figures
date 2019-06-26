@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+
 Route::post('/figures', 'FiguresController@store');
 Route::post('/delete_figure/{id}', 'FiguresController@destroy');
 Route::get('/figures', 'FiguresController@index');
 Route::get('/figures_types', 'FiguresTypesController@index');
 Route::get('/figures_statistics', 'FiguresTypesController@figureStatistics');
+
+Route::fallback(function () {
+    return view('index');
+});
