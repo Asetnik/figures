@@ -12,11 +12,9 @@ class CircleForm extends Component {
             type_id: props.type_id,
             data: { radius: 1 },
             radiusValid: true,
-            formValid: true
         };
         this.radiusChange = this.radiusChange.bind(this);
         this.radiusValidation = this.radiusValidation.bind(this);
-        this.formValidation = this.formValidation.bind(this);
     }
 
     radiusChange(e) {
@@ -35,18 +33,6 @@ class CircleForm extends Component {
         if( this.state.data.radius <= this.state.MINVALUE || this.state.data.radius > this.state.MAXVALUE ) {
             this.setState({
                 radiusValid: false
-            }, this.formValidation);
-        }
-    }
-
-    formValidation() {
-        this.setState({
-            formValid: true
-        });
-
-        if( !this.state.radiusValid ) {
-            this.setState({
-                formValid: false
             });
         }
     }
@@ -70,7 +56,7 @@ class CircleForm extends Component {
                             />
                             {  (!this.state.radiusValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
-                        <Button disabled={ (!this.state.formValid) && "disabled" } variant="primary" type="submit">
+                        <Button disabled={ (!this.state.radiusValid) && "disabled" } variant="primary" type="submit">
                             Create figure
                         </Button>
                     </Form>

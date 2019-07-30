@@ -22,7 +22,6 @@ class FiguresList extends Component {
     }
 
     alertAboutRemove(event) {
-        let tr = event.target.parentElement.parentElement;
         let id = Number(event.target.getAttribute("figure_id"));
         Swal.fire({
             title: 'Are you sure?',
@@ -35,10 +34,12 @@ class FiguresList extends Component {
         }).then((result) => {
             if (result.value) {
                 axios
-                    .post('/delete_figure/' + id)
+                    .delete('/figures/' + id)
                     .then(response => {
                         if(response.data == 'deleted') {
-                            tr.remove();
+                            this.setState({
+                                figuresArray: this.state.figuresArray.filter(figure => figure.id !== id)
+                            });
                             Swal.fire({
                                 type: 'success',
                                 title: 'Deleted',

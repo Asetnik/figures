@@ -14,11 +14,9 @@ class SquareForm extends Component {
                 height: 1
             },
             heightValid: true,
-            formValid: true
         };
         this.heightChange = this.heightChange.bind(this);
         this.heightValidation = this.heightValidation.bind(this);
-        this.formValidation = this.formValidation.bind(this);
     }
 
     heightChange(e) {
@@ -32,23 +30,11 @@ class SquareForm extends Component {
     heightValidation(){
         this.setState({
             heightValid: true
-        }, this.formValidation);
+        });
 
         if( this.state.data.height <= this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE ) {
             this.setState({
                 heightValid: false
-            }, this.formValidation);
-        }
-    }
-
-    formValidation() {
-        this.setState({
-            formValid: true
-        });
-
-        if( !this.state.heightValid ) {
-            this.setState({
-                formValid: false
             });
         }
     }
@@ -72,7 +58,7 @@ class SquareForm extends Component {
                             />
                             {  (!this.state.heightValid) && <div className="text text-danger">Incorrect value</div> }
                         </Form.Group>
-                        <Button disabled={ (!this.state.formValid) && "disabled" } variant="primary" type="submit">
+                        <Button disabled={ (!this.state.heightValid) && "disabled" } variant="primary" type="submit">
                             Create figure
                         </Button>
                     </Form>

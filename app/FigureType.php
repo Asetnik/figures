@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class FigureType extends Model
 {
+    const CIRCLE = 'circle';
+    const TRIANGLE = 'triangle';
+    const SQUARE = 'square';
+    const RECTANGLE = 'rectangle';
+
     public function figure(){
         return $this->hasMany(Figure::class);
     }
@@ -14,11 +19,6 @@ class FigureType extends Model
         $figureType = new static;
         $figureType->type = $type;
         return $figureType;
-    }
-
-    public function edit($fields) {
-        $this->fill($fields);
-        $this->save();
     }
 
     public function remove()

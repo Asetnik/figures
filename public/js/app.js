@@ -51508,12 +51508,10 @@ function (_Component) {
       data: {
         radius: 1
       },
-      radiusValid: true,
-      formValid: true
+      radiusValid: true
     };
     _this.radiusChange = _this.radiusChange.bind(_assertThisInitialized(_this));
     _this.radiusValidation = _this.radiusValidation.bind(_assertThisInitialized(_this));
-    _this.formValidation = _this.formValidation.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -51536,19 +51534,6 @@ function (_Component) {
       if (this.state.data.radius <= this.state.MINVALUE || this.state.data.radius > this.state.MAXVALUE) {
         this.setState({
           radiusValid: false
-        }, this.formValidation);
-      }
-    }
-  }, {
-    key: "formValidation",
-    value: function formValidation() {
-      this.setState({
-        formValid: true
-      });
-
-      if (!this.state.radiusValid) {
-        this.setState({
-          formValid: false
         });
       }
     }
@@ -51574,7 +51559,7 @@ function (_Component) {
       }), !this.state.radiusValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text text-danger"
       }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        disabled: !this.state.formValid && "disabled",
+        disabled: !this.state.radiusValid && "disabled",
         variant: "primary",
         type: "submit"
       }, "Create figure"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -51608,6 +51593,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/Button.js");
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -51674,48 +51663,36 @@ function (_Component) {
     key: "firstXChange",
     value: function firstXChange(e) {
       this.setState({
-        data: {
-          firstX: Number(e.target.value),
-          firstY: this.state.data["firstY"],
-          secondX: this.state.data["secondX"],
-          secondY: this.state.data["secondY"]
-        }
+        data: _objectSpread({}, this.state.data, {
+          firstX: Number(e.target.value)
+        })
       }, this.firstXValidation);
     }
   }, {
     key: "firstYChange",
     value: function firstYChange(e) {
       this.setState({
-        data: {
-          firstX: this.state.data["firstX"],
-          firstY: Number(e.target.value),
-          secondX: this.state.data["secondX"],
-          secondY: this.state.data["secondY"]
-        }
+        data: _objectSpread({}, this.state.data, {
+          firstY: Number(e.target.value)
+        })
       }, this.firstYValidation);
     }
   }, {
     key: "secondXChange",
     value: function secondXChange(e) {
       this.setState({
-        data: {
-          firstX: this.state.data["firstX"],
-          firstY: this.state.data["firstY"],
-          secondX: Number(e.target.value),
-          secondY: this.state.data["secondY"]
-        }
+        data: _objectSpread({}, this.state.data, {
+          secondX: Number(e.target.value)
+        })
       }, this.secondXValidation);
     }
   }, {
     key: "secondYChange",
     value: function secondYChange(e) {
       this.setState({
-        data: {
-          firstX: this.state.data["firstX"],
-          firstY: this.state.data["firstY"],
-          secondX: this.state.data["secondX"],
+        data: _objectSpread({}, this.state.data, {
           secondY: Number(e.target.value)
-        }
+        })
       }, this.secondYValidation);
     }
   }, {
@@ -51932,12 +51909,10 @@ function (_Component) {
       data: {
         height: 1
       },
-      heightValid: true,
-      formValid: true
+      heightValid: true
     };
     _this.heightChange = _this.heightChange.bind(_assertThisInitialized(_this));
     _this.heightValidation = _this.heightValidation.bind(_assertThisInitialized(_this));
-    _this.formValidation = _this.formValidation.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -51955,24 +51930,11 @@ function (_Component) {
     value: function heightValidation() {
       this.setState({
         heightValid: true
-      }, this.formValidation);
+      });
 
       if (this.state.data.height <= this.state.MINVALUE || this.state.data.height > this.state.MAXVALUE) {
         this.setState({
           heightValid: false
-        }, this.formValidation);
-      }
-    }
-  }, {
-    key: "formValidation",
-    value: function formValidation() {
-      this.setState({
-        formValid: true
-      });
-
-      if (!this.state.heightValid) {
-        this.setState({
-          formValid: false
         });
       }
     }
@@ -51998,7 +51960,7 @@ function (_Component) {
       }), !this.state.heightValid && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text text-danger"
       }, "Incorrect value")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        disabled: !this.state.formValid && "disabled",
+        disabled: !this.state.heightValid && "disabled",
         variant: "primary",
         type: "submit"
       }, "Create figure"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -52032,6 +51994,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/Button.js");
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -52094,33 +52060,27 @@ function (_Component) {
     key: "firstSideChange",
     value: function firstSideChange(e) {
       this.setState({
-        data: {
-          firstSide: Number(e.target.value),
-          secondSide: this.state.data["secondSide"],
-          thirdSide: this.state.data["thirdSide"]
-        }
+        data: _objectSpread({}, this.state.data, {
+          firstSide: Number(e.target.value)
+        })
       }, this.firstSideValidation);
     }
   }, {
     key: "secondSideChange",
     value: function secondSideChange(e) {
       this.setState({
-        data: {
-          firstSide: this.state.data["firstSide"],
-          secondSide: Number(e.target.value),
-          thirdSide: this.state.data["thirdSide"]
-        }
+        data: _objectSpread({}, this.state.data, {
+          secondSide: Number(e.target.value)
+        })
       }, this.secondSideValidation);
     }
   }, {
     key: "thirdSideChange",
     value: function thirdSideChange(e) {
       this.setState({
-        data: {
-          firstSide: this.state.data["firstSide"],
-          secondSide: this.state.data["secondSide"],
+        data: _objectSpread({}, this.state.data, {
           thirdSide: Number(e.target.value)
-        }
+        })
       }, this.thirdSideValidation);
     }
   }, {
@@ -52425,7 +52385,8 @@ function (_Component) {
   }, {
     key: "alertAboutRemove",
     value: function alertAboutRemove(event) {
-      var tr = event.target.parentElement.parentElement;
+      var _this3 = this;
+
       var id = Number(event.target.getAttribute("figure_id"));
       sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire({
         title: 'Are you sure?',
@@ -52437,9 +52398,14 @@ function (_Component) {
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.value) {
-          axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/delete_figure/' + id).then(function (response) {
+          axios__WEBPACK_IMPORTED_MODULE_3___default.a["delete"]('/figures/' + id).then(function (response) {
             if (response.data == 'deleted') {
-              tr.remove();
+              _this3.setState({
+                figuresArray: _this3.state.figuresArray.filter(function (figure) {
+                  return figure.id !== id;
+                })
+              });
+
               sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire({
                 type: 'success',
                 title: 'Deleted',
@@ -52461,7 +52427,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Figures list"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Table__WEBPACK_IMPORTED_MODULE_1___default.a, {
         striped: true,
@@ -52472,7 +52438,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           key: index
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, index + 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, figure.type), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, figure.square), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          onClick: _this3.alertAboutRemove,
+          onClick: _this4.alertAboutRemove,
           figure_id: figure.id,
           className: "fa fa-trash-o",
           "aria-hidden": "true",

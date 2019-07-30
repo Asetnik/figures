@@ -38,10 +38,8 @@ class RectangleForm extends Component {
     firstXChange(e) {
         this.setState({
             data: {
-                firstX: Number(e.target.value),
-                firstY: this.state.data["firstY"],
-                secondX: this.state.data["secondX"],
-                secondY: this.state.data["secondY"]
+                    ...this.state.data,
+                firstX: Number(e.target.value)
             }
         }, this.firstXValidation);
     }
@@ -49,10 +47,8 @@ class RectangleForm extends Component {
     firstYChange(e) {
         this.setState({
             data: {
-                firstX: this.state.data["firstX"],
-                firstY: Number(e.target.value),
-                secondX: this.state.data["secondX"],
-                secondY: this.state.data["secondY"]
+                ...this.state.data,
+                firstY: Number(e.target.value)
             }
         }, this.firstYValidation);
     }
@@ -60,10 +56,8 @@ class RectangleForm extends Component {
     secondXChange(e) {
         this.setState({
             data: {
-                firstX: this.state.data["firstX"],
-                firstY: this.state.data["firstY"],
-                secondX: Number(e.target.value),
-                secondY: this.state.data["secondY"]
+                ...this.state.data,
+                secondX: Number(e.target.value)
             }
         }, this.secondXValidation);
     }
@@ -71,9 +65,7 @@ class RectangleForm extends Component {
     secondYChange(e) {
         this.setState({
             data: {
-                firstX: this.state.data["firstX"],
-                firstY: this.state.data["firstY"],
-                secondX: this.state.data["secondX"],
+                ...this.state.data,
                 secondY: Number(e.target.value)
             }
         }, this.secondYValidation);

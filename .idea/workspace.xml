@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f45523a-6e21-4285-b4ac-b6a5b029b671" name="first front to server request" comment="changed rectangle creation, added notifications about creating figure">
+    <list default="true" id="7f45523a-6e21-4285-b4ac-b6a5b029b671" name="first front to server request" comment="Route fallback">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Figure.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Figure.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/FigureType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FigureType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/SquareForm/SquareForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/SquareForm/SquareForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureStatistics/FigureStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureStatistics/FigureStatistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/FiguresList/FiguresList.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FiguresList/FiguresList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <list id="b03a3158-7c08-4da5-b3ba-79e094ef29a9" name="Default Changelist" comment="" />
     <list id="19b54631-6fae-4083-bb75-93b6e5fdbb18" name="Revert &quot;first front to server request&quot;" comment="Revert &quot;first front to server request&quot;&#10;&#10;This reverts commit 764999f3" />
     <list id="7c801208-4243-4d0d-8143-971b93d7735e" name="Revert &quot;first front to server request&quot;-2" comment="Revert &quot;first front to server request&quot;&#10;&#10;This reverts commit 764999f3" />
     <list id="5ad96c5a-d83a-45b0-9931-00db427a2eaf" name="Revert &quot;first front to server request&quot;-3" comment="first front to server request" />
-    <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,111 +45,6 @@
     <expand />
     <select />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FigureAdd.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/FiguresList/FiguresList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FiguresController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Figure.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="45" column="114" selection-start-line="45" selection-start-column="114" selection-end-line="45" selection-end-column="114" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="213" column="77" selection-start-line="213" selection-start-column="77" selection-end-line="213" selection-end-column="77" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="174" column="75" selection-start-line="172" selection-start-column="23" selection-end-line="174" selection-end-column="75" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -156,6 +60,8 @@
       <find>consol</find>
       <find>firstSide</find>
       <find>bootstrap</find>
+      <find>for</find>
+      <find>json_decode</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,44 +78,6 @@
     </option>
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
     <option name="SIGN_OFF_COMMIT" value="true" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/database/seeds/FiguresTypesTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_20_091851_create_figures_types_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_20_091912_create_figures_table.php" />
-        <option value="$PROJECT_DIR$/app/FigureType.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/Test/Test.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FiguresFroms/CircleForm/CircleForm.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/AddFigure/AddFigure.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FiguresFroms/RectangleForm/RectangleForm.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FiguresFroms/SquareForm/SquareForm.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FiguresFroms/TriangleForm/TriangleForm.js" />
-        <option value="$PROJECT_DIR$/resources/js/app.js" />
-        <option value="$PROJECT_DIR$/resources/js/App.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FigureList/FigureList.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/Main/Main.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/Header/Header.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FormErrors/FormErrors.js" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/resources/sass/app.scss" />
-        <option value="$PROJECT_DIR$/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/SquareForm/SquareForm.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FiguresTypesController.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/FigureStatistics/FigureStatistics.js" />
-        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FiguresList/FiguresList.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FiguresController.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/FigureAdd/FigureAdd.js" />
-        <option value="$PROJECT_DIR$/app/Figure.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-      </list>
-    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -303,139 +171,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="25" />
-    <option name="width" value="927" />
-    <option name="height" value="1053" />
-  </component>
+  <component name="ProjectId" id="1Oj7YRh0z8pNvRswERKGcJkgjjC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FigureAdd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FigureAdd" type="462c0819:PsiDirectoryNode" />
-              <item name="FiguresForms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FigureAdd" type="462c0819:PsiDirectoryNode" />
-              <item name="FiguresForms" type="462c0819:PsiDirectoryNode" />
-              <item name="CircleForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FigureAdd" type="462c0819:PsiDirectoryNode" />
-              <item name="FiguresForms" type="462c0819:PsiDirectoryNode" />
-              <item name="TriangleForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figures" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figures" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -487,7 +224,12 @@
       <workItem from="1561357215870" duration="17451000" />
       <workItem from="1561442971493" duration="26335000" />
       <workItem from="1561529468569" duration="23310000" />
-      <workItem from="1561558066062" duration="6363000" />
+      <workItem from="1561558066062" duration="6996000" />
+      <workItem from="1564472533482" duration="1796000" />
+      <workItem from="1564474344858" duration="1800000" />
+      <workItem from="1564476158128" duration="1778000" />
+      <workItem from="1564477966976" duration="681000" />
+      <workItem from="1564479205334" duration="7387000" />
     </task>
     <task id="LOCAL-00001" summary="first front to server request">
       <created>1561036012960</created>
@@ -559,59 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1561563305287</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Route fallback">
+      <created>1561566104805</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1561566104805</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112662000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2091865" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info id="Repositories" order="3" weight="0.32982844" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.078583285" side_tool="true" weight="0.32937366" />
-      <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.9214167" weight="0.32937366" />
-      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Database" order="0" weight="0.1925844" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2091865" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info id="Repositories" order="3" weight="0.32982844" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.078583285" side_tool="true" weight="0.32937366" />
-      <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.9214167" weight="0.32937366" />
-      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Database" order="0" weight="0.1925844" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -622,26 +320,13 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_WIDTH">
                 <map>
                   <entry key="2" value="15" />
                   <entry key="3" value="15" />
                 </map>
               </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -670,258 +355,8 @@
     <MESSAGE value="form validation added" />
     <MESSAGE value="added figures list adn figures statistics" />
     <MESSAGE value="changed rectangle creation, added notifications about creating figure" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed rectangle creation, added notifications about creating figure" />
+    <MESSAGE value="Route fallback" />
+    <option name="LAST_COMMIT_MESSAGE" value="Route fallback" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Figure_type.php" />
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/seeds/FiguresTypesTableSeeder.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_20_091851_create_figures_types_table.php" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d696abe4-3c9b-4096-be4c-fab242327ec1/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_20_091912_create_figures_table.php" />
-    <entry file="file://$PROJECT_DIR$/.idea/figures.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="61594" column="155" selection-start-line="61594" selection-start-column="155" selection-end-line="61594" selection-end-column="155" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/FigureType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react/cjs/react.development.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="1838" column="2" selection-start-line="1838" selection-start-column="2" selection-end-line="1838" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="298" column="8" selection-start-line="298" selection-start-column="8" selection-end-line="298" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/FormErrors/FormErrors.js" />
-    <entry file="file://$PROJECT_DIR$/resources/js/components/Main/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/fontawesome.css" />
-    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sweetalert/dist/sweetalert2.min.css" />
-    <entry file="file://$PROJECT_DIR$/resources/assets/sweetalert/dist/sweetalert2.css" />
-    <entry file="file://$PROJECT_DIR$/resources/sass/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="71" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#35119#35353#2" expanded="true" />
-            <element signature="e#36245#36398#1" expanded="true" />
-            <element signature="e#36440#36674#1" expanded="true" />
-            <element signature="e#40042#40318#2" expanded="true" />
-            <element signature="e#41237#41390#1" expanded="true" />
-            <element signature="e#41432#41708#1" expanded="true" />
-            <element signature="e#76138#76325#2" expanded="true" />
-            <element signature="e#76580#76716#2" expanded="true" />
-            <element signature="e#77171#77304#2" expanded="true" />
-            <element signature="e#79014#79167#1" expanded="true" />
-            <element signature="e#94287#94517#2" expanded="true" />
-            <element signature="e#95529#95765#2" expanded="true" />
-            <element signature="e#131580#131757#2" expanded="true" />
-            <element signature="e#131812#131989#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/SquareForm/SquareForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FiguresTypesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-          <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/FigureStatistics/FigureStatistics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="174" column="75" selection-start-line="172" selection-start-column="23" selection-end-line="174" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="213" column="77" selection-start-line="213" selection-start-column="77" selection-end-line="213" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/FiguresList/FiguresList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Figure.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="45" column="114" selection-start-line="45" selection-start-column="114" selection-end-line="45" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FiguresController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/FigureAdd/FigureAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

@@ -11,11 +11,8 @@
 |
 */
 
-
-Route::post('/figures', 'FiguresController@store');
-Route::post('/delete_figure/{id}', 'FiguresController@destroy');
-Route::get('/figures', 'FiguresController@index');
-Route::get('/figures_types', 'FiguresTypesController@index');
+Route::resource('/figures', 'FiguresController');
+Route::resource('/figures_types', 'FiguresTypesController');
 Route::get('/figures_statistics', 'FiguresTypesController@figureStatistics');
 
 Route::fallback(function () {

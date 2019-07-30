@@ -36,9 +36,8 @@ class TriangleForm extends Component {
     firstSideChange(e) {
         this.setState({
             data: {
-                firstSide: Number(e.target.value),
-                secondSide: this.state.data["secondSide"],
-                thirdSide: this.state.data["thirdSide"]
+                ...this.state.data,
+                firstSide: Number(e.target.value)
             }
         }, this.firstSideValidation);
     }
@@ -46,9 +45,8 @@ class TriangleForm extends Component {
     secondSideChange(e) {
         this.setState({
             data: {
-                firstSide: this.state.data["firstSide"],
-                secondSide: Number(e.target.value),
-                thirdSide: this.state.data["thirdSide"]
+                ...this.state.data,
+                secondSide: Number(e.target.value)
             }
         }, this.secondSideValidation);
     }
@@ -56,8 +54,7 @@ class TriangleForm extends Component {
     thirdSideChange(e) {
         this.setState({
             data: {
-                firstSide: this.state.data["firstSide"],
-                secondSide: this.state.data["secondSide"],
+                ...this.state.data,
                 thirdSide: Number(e.target.value)
             }
         }, this.thirdSideValidation);
