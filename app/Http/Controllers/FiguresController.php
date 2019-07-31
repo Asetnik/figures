@@ -38,15 +38,12 @@ class FiguresController extends Controller
     public function store(Request $request)
     {
         $typeId = $request->get('type_id');
-        $typeName = FigureType::getTypeName($typeId);
-        $data = $request->get('data');
+        $data = (object)$request->get('data');
         $figure = new Figure;
         $figure->type_id = $typeId;
         $figure->data = json_encode($data);
-        $square = Figure::calcSquare($typeName, $data);
-        $figure->square = $square;
         $figure->save();
-        return response()->json($square);
+        return response()->json($figure->square);
     }
 
     /**

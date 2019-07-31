@@ -52279,7 +52279,7 @@ function (_Component) {
     value: function componentWillMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/figures_statistics').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/figures_statistics').then(function (response) {
         _this2.setState({
           figureStatistics: response.data
         });

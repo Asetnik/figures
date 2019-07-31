@@ -15,7 +15,7 @@ class FigureStatistics extends Component {
 
     componentWillMount() {
         axios
-            .get('/figures_statistics')
+            .get('/api/figures_statistics')
             .then(response => {
                 this.setState({ figureStatistics: response.data });
             })

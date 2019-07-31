@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f45523a-6e21-4285-b4ac-b6a5b029b671" name="first front to server request" comment="Route fallback">
+    <list default="true" id="7f45523a-6e21-4285-b4ac-b6a5b029b671" name="first front to server request" comment="edits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Figure.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Figure.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/FigureType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FigureType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FiguresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FiguresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/CircleForm/CircleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/RectangleForm/RectangleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/SquareForm/SquareForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/SquareForm/SquareForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureAdd/FiguresForms/TriangleForm/TriangleForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/FigureStatistics/FigureStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FigureStatistics/FigureStatistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/FiguresList/FiguresList.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FiguresList/FiguresList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <list id="b03a3158-7c08-4da5-b3ba-79e094ef29a9" name="Default Changelist" comment="" />
@@ -175,6 +172,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -229,7 +227,8 @@
       <workItem from="1564474344858" duration="1800000" />
       <workItem from="1564476158128" duration="1778000" />
       <workItem from="1564477966976" duration="681000" />
-      <workItem from="1564479205334" duration="7387000" />
+      <workItem from="1564479205334" duration="8955000" />
+      <workItem from="1564559059357" duration="6707000" />
     </task>
     <task id="LOCAL-00001" summary="first front to server request">
       <created>1561036012960</created>
@@ -308,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561566104805</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="edits">
+      <created>1564492075682</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1564492075683</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +362,8 @@
     <MESSAGE value="added figures list adn figures statistics" />
     <MESSAGE value="changed rectangle creation, added notifications about creating figure" />
     <MESSAGE value="Route fallback" />
-    <option name="LAST_COMMIT_MESSAGE" value="Route fallback" />
+    <MESSAGE value="edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="edits" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

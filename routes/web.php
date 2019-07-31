@@ -13,7 +13,6 @@
 
 Route::resource('/figures', 'FiguresController');
 Route::resource('/figures_types', 'FiguresTypesController');
-Route::get('/figures_statistics', 'FiguresTypesController@figureStatistics');
 
 Route::fallback(function () {
     return view('index');
